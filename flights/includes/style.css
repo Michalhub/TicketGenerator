@@ -1,0 +1,35 @@
+table {
+    font-size: 24px;
+    border: 1px solid black;
+    border-collapse: separate;
+    background-color: aquamarine;
+}
+thead th {
+    font-size: 30px;
+    background-color: navajowhite;
+    color: blue;
+}
+ td, th {
+    border: 1px solid black;
+    padding: 15px;
+    width: auto;
+}
+
+.half {
+    width: 40%;
+    height: auto;
+}
+
+.full {
+    height: 50px;
+}
+.bold {
+    background-color: #9fdfdb;
+    font-weight: bold;
+}
+
+.halfmini {
+    font-size: 18px;
+    width: 40%;
+    height: auto;
+}

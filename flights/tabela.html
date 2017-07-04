@@ -1,0 +1,65 @@
+<!Doctype html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+    <title>Mikes Airlines</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Mike's Airfield</th>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Lotnisko wylotu</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Lotnisko przylotu</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Czas lotu</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Cena lotu</td>
+            <td></td>
+        </tr>
+    </table >
+</body>
+</html>
+
+
+   <form action="../pdf.php" method="POST" role="form">
+        <label>Lotnisko wylotu</label>
+        <select name="start">
+            <?php
+            foreach ($airports as $airport => $name) {
+                echo "<option value='$name[name]'>$name[name]  $name[code]  $name[timezone]</option>";
+            }
+            ?>
+        </select>
+        <br/>
+        <label>Lotnisko przylotu</label>
+        <select name="destination">
+            <?php
+            foreach ($airports as $airport => $name) {
+                echo "<option value='$name[name]'>$name[name]  $name[code]  $name[timezone]</option>";
+            }
+            ?>
+        </select>
+        <br/>
+        <label>Data startu</label>
+        <select>
+            <?php
+            echo "<input name='startTime' type='datetime-local'></input>";
+            ?>
+        </select></br>
+        <label>Długość lotu w godzinach</label>
+        <input type="number" min="0" step="1" name="flightTime">
+        </br>
+        <label>Cena lotu</label>
+        <input type="number" min="0" step="0.01" name="price">
+        <input type="submit">
+        <a href="../pdf.php" target="_blank">link do pdf</a>
+    </form>
